@@ -24,30 +24,32 @@ function App() {
 
   return (
     <div className="container">
-      <img src="./src/img/logo.svg" alt="" />
+      <img className='logo' src="./src/img/logo.svg" alt="" />
       <div className='content'>
         <div className='inputs-container'>
           <p className='bill-label'>Bill</p>
-          <img src="./src/img/icon-dollar.svg" alt="" />
+          {regexBill.test(bill) ? null : (<p className='error'>error: Invalid value</p>)}
+          <img className='icon-dollar' src="./src/img/icon-dollar.svg" alt="" />
           <input type="text" className='input-bill' placeholder='0' onChange={handleBill} value={bill} />
 
           <p className='tip-label'>Select Tip %</p>
+          {regexNumber.test(tip) ? null : (<p className='error'>error: invalid custom tip</p>)}
           <div className='tips-options'>
             <button className='tip-button' onClick={handleTip5}>5%</button>
             <button className='tip-button' onClick={handleTip10}>10%</button>
             <button className='tip-button' onClick={handleTip15}>15%</button>
             <button className='tip-button' onClick={handleTip25}>25%</button>
             <button className='tip-button' onClick={handleTip50}>50%</button>
-            <button className='tip-button' onClick={handleTip10}>10%</button>
             <input type="text" className='tip-custom' placeholder='Custom' maxLength={2} value={tip} onChange={handleTip} />
           </div>
 
           <p className='people-label'>Number of People</p>
-          <img src="./src/img/icon-person.svg" alt="" />
+          { regexNumber.test(people) ? null : (<p className='error'>error: invalid number of people</p>)}
+          <img className='icon-people' src="./src/img/icon-person.svg" alt="" />
           <input type="text" className='input-people' placeholder='0' onChange={handlePeople} value={people} />
 
         </div>
-        <Display />
+        <Display bill={Number(bill)} tip={Number(tip)} people={Number(people)} setBill={setBill} setTip={setTip} setPeople={setPeople}/>
 
       </div>
     </div>

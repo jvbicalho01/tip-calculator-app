@@ -1,0 +1,59 @@
+.result-container {
+  background-color: hsl(183, 100%, 15%);
+  width: 50%;
+  padding: 50px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.result-container .amount,
+.result-container .total {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.result-container .amount .amount-label,
+.result-container .total .total-label {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.result-container .amount .person,
+.result-container .total .person {
+  color: hsl(186, 14%, 43%);
+}
+
+.result-container .amount .amount-value,
+.result-container .total .total-value {
+  color: hsl(172, 67%, 45%);
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.result-container .reset-enabled-btn,
+.result-container .reset-disabled-btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+.result-container .reset-disabled-btn {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.result-container .reset-enabled-btn:hover{
+  background-color: white;
+}
